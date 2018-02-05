@@ -11,7 +11,7 @@ var root_dir = path.join(__dirname, '..')
 var bin_dir = path.join(root_dir, 'bin')
 
 function copy_binary(bin) {
-    if (!fs.existsSync(bin)) {
+    if (!fs.existsSync('./ppx')) {
         fs.symlinkSync('./ppx', bin)
     }
 }
