@@ -19,7 +19,6 @@ function copy_binary(bin) {
     fs.chmodSync(ppx_path, 0555)
 }
 
-
 if (is_windows) {
     throw new Error("Windows is not yet supported")
 } else if (is_macos) {
