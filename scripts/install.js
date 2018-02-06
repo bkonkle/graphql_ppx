@@ -12,12 +12,13 @@ var bin_dir = path.join(root_dir, 'bin')
 var ppx_path = path.join(root_dir, 'ppx')
 
 function copy_binary(bin) {
-    console.log(`[graphql_ppx] Copying binary from "${bin}" to "${ppx_path}"`)
-    if (fs.existsSync(ppx_path)) {
-        fs.unlinkSync(ppx_path)
+    if (!fs.existsSync(ppx_path)) {
+        console.log(`[graphql_ppx] Copying binary from "${bin}" to "${ppx_path}"`)
+        fs.symlinkSync(bin, ppx_path)
     }
-    fs.symlinkSync(bin, ppx_path)
+    fs.chmodSync(ppx_path, 0555)
 }
+
 
 if (is_windows) {
     throw new Error("Windows is not yet supported")
