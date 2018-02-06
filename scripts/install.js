@@ -16,7 +16,6 @@ function copy_binary(bin) {
         console.log(`[graphql_ppx] Copying binary from "${bin}" to "${ppx_path}"`)
         fs.symlinkSync(bin, ppx_path)
     }
-    fs.chmodSync(ppx_path, 0777)
 }
 
 
