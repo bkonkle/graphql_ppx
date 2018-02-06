@@ -18,7 +18,6 @@ function copy_binary(bin) {
     }
 }
 
-
 if (is_windows) {
     throw new Error("Windows is not yet supported")
 } else if (is_macos) {
