@@ -12,10 +12,8 @@ var bin_dir = path.join(root_dir, 'bin')
 var ppx_path = path.join(root_dir, 'ppx')
 
 function copy_binary(bin) {
-    if (!fs.existsSync(ppx_path)) {
-        console.log(`[graphql_ppx] Copying binary from "${bin}" to "${ppx_path}"`)
-        fs.symlinkSync(bin, ppx_path)
-    }
+    console.log(`[graphql_ppx] Copying binary from "${bin}" to "${ppx_path}"`)
+    fs.symlinkSync(bin, ppx_path)
 }
 
 if (is_windows) {
